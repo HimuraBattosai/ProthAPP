@@ -15,8 +15,6 @@ pipeline{
 			steps{
 				bat 'mvn test'
 				bat 'mvn cobertura:cobertura'
-				bat 'mvn javadoc:javadoc'
-				bat 'mvn site'
 			}
 			post{
 				success{
