@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+<head>
+	<meta charset="utf-8">
+	<title th:text="${pageTitle}"></title>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+	<link href="../css/styles.css" rel="stylesheet"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div th:insert="/shared/navbar_patient :: navbar">  </div>
+	
+	<div class="container">
+		<div class="panel panel-default">
+			<div class="panel-heading">Create Exercice</div>
+			  
+			<div class="panel-body">
+				<form action="/ExerciceProg/create" method="post">
+					<div class="row form-row">
+					  <div class="col-md-4 form-group">
+					    <label for="prenom">Patient</label>
+					    <input class="form-control" id="patient" name="patientName" th:value="${patientName}">
+					     <input type="hidden" class="form-control" id="patient" name="patientID" th:value="${patientID}">
+					  </div>
+				  	
+				  	
+				  	<div class="col-md-4 form-group">
+					    <label for="prenom">Exercice</label>
+					    <input class="form-control" id="exercice" name="exerciceID" th:value="${exercice.id}">
+					  </div>
+				  	</div>
+				  	<div class="row form-row">
+				  	<div class="col-md-4 form-group">
+					    <label for="prenom">Date</label>
+					    <input type="date" class="form-control" id="date_heure" name="date_heure" th:value="${exerciceProg.date_heure}">
+					  </div>
+				  	
+				  	<div class="col-md-4 form-group">
+					    <label for="prenom">Nombre de répetition</label>
+					    <input class="form-control" id="nb_repetition" name="nb_repetition" th:value="${exerciceProg.nb_repetition}">
+					  </div>
+					  </div>
+					  <div class="row form-row">
+					  <div class="col-md-4 form-group">
+					    <label for="prenom">Durée(min)</label>
+					    <input type="" class="form-control" id="duree_minutes" name="duree_minutes" th:value="${exerciceProg.duree_minutes}">
+					  </div>
+				  	</div>
+				  	
+				  	
+				  	
+				  	
+				  	<button type="submit" class="btn btn-primary">Create exercice</button>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+	
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+<head>
+	<meta charset="utf-8">
+	<title th:text="${pageTitle}"></title>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+	<link href="../css/styles.css" rel="stylesheet"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div th:insert="/shared/navbar :: navbar">  </div>
+	
+	<div class="container">
+		<div class="panel panel-default">
+			<div class="panel-heading">Create Patient</div>
+			  
+			<div class="panel-body">
+				<form action="/Patient/create" method="post">
+					<div class="row form-row">
+					  <div class="col-md-4 form-group">
+					    <label for="nom">Nom</label>
+					    <input class="form-control" id="nom" name="nom" th:value="${patient.nom}">
+					  </div>
+					  <div class="col-md-4 form-group">
+					    <label for="prenom">Prenom</label>
+					    <input class="form-control" id="prenom" name="prenom" th:value="${patient.prenom}">
+					  </div>
+				  	</div>
+				  	
+				  	<div class="row form-row">
+					  <div class="col-md-4 form-group">
+					    <label for="date">Date de naissance</label>
+					    <input type="date" class="form-control" id="date" name="date_naissance" th:value="${patient.date_naissance}">
+					  </div>
+					  <div class="col-md-4 form-group">
+					    <label for="sexe">Sexe</label><br>
+					    <input type="radio" name="sexe" value="MALE"> Homme
+  						<input type="radio" name="sexe" value="FEMALE"> Femme
+					  </div>
+				  	</div>
+				  	
+				  	<div class="row form-row">
+					  <div class="col-md-4 form-group">
+					    <label for="adresse">Adresse</label>
+					    <input class="form-control" id="adresse" name="adresse" th:value="${patient.adresse}">
+					  </div>
+					  <div class="col-md-4 form-group">
+					    <label for="tel">Telephone</label>
+					    <input type="number" class="form-control" id="tel" name="telephone" th:value="${patient.telephone}">
+					  </div>
+				  	</div>
+				  	
+				  	<div class="row form-row">
+					  <div class="col-md-3 form-group">
+					    <label for="taille">Taille</label>
+					    <input type="number" class="form-control" id="taille" name="taille" th:value="${patient.taille}">
+					  </div>
+					  <div class="col-md-3 form-group">
+					    <label for="poids">Poids</label>
+					    <input type="number" class="form-control" id="poids" name="poids" th:value="${patient.poids}">
+					  </div>
+					  <div class="col-md-3 form-group">
+					  		<label for="grp_sang">Groupe Sanguin</label>
+						  	<select class="form-control" id="grp_sang" name="grp_sanguin">
+							    <option value="A" >A</option>
+							    <option value="B">B</option>
+							    <option value="AB">AB</option>
+							    <option value="O">O</option>
+							</select>
+					  </div>
+				  	</div>
+				  	
+				  	<div class="row form-row">
+					  <div class="col-md-3 form-group">
+					    <label for="acc">Type d'accident</label>
+					    <input class="form-control" id="acc" name="accident" th:value="${patient.accident}">
+					  </div>
+					  <div class="col-md-3 form-group">
+					    <label for="date_acc">Date d'accident</label>
+					    <input type="date" class="form-control" id="acc" name="date_accident" th:value="${patient.date_accident}">
+					  </div>
+				  	</div>
+				  	
+				  	<button type="submit" class="btn btn-primary">Create patient</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

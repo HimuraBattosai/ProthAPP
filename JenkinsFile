@@ -1,0 +1,62 @@
+pipeline{
+	agent any
+	tools{
+		maven 'MAVEN_3.6'
+		jdk 'JAVA_8'
+	}
+	stages{
+		stage('STEP 1 - Compile'){
+			steps{
+				bat 'mvn compile'
+			}
+		}
+		
+		stage('STEP 2 - Unit Test'){
+			steps{
+				bat 'mvn test'
+				bat 'mvn cobertura:cobertura'
+				bat 'mvn javadoc:javadoc'
+				bat 'mvn site'
+			}
+			post{
+				success{
+					junit 'target/surefire-reports/**/*.xml'
+				}
+			}
+		}
+		
+		stage('STEP 3 - Build'){
+			steps{
+				bat 'mvn install'
+			}
+			post{
+				success{
+					junit 'target/surefire-reports/**/*.xml'
+				}
+			}
+		}
+		
+		stage('STEP 4 - Load Test'){
+			steps{
+				bat 'mvn gatling:test'
+			}
+		}
+		
+		stage('STEP 5 - Nexus Deploy'){
+			steps{
+				nexusPublisher nexusInstanceId: 'localNexus', 
+				nexusRepositoryId: 'releases', 
+				packages: 
+				[
+					[
+						$class: 'MavenPackage', mavenAssetList: 
+						[[classifier: '', extension: '', filePath: 'target/Proth_APP-0.0.1-SNAPSHOT']], 
+						mavenCoordinate: [artifactId: 'Proth_APP-war', groupId: 'com', packaging: 'war', version: '0.0.1-SNAPSHOT']
+					]
+				]
+			}
+		}
+		
+		
+	}
+}

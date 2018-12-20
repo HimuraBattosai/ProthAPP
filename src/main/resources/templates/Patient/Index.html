@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title th:text="${pageTitle}"></title>
+<link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css"
+th:href="@{css/bootstrap.min.css}"/>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div th:insert="/shared/navbar :: navbar"></div>
+	
+	<div class="container">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<div class="row">
+					<div class="col-xs-4">
+						<h4>Listes des patients</h4>
+					</div>
+					<div class="col-xs-6">
+						 <form th:action="'/Patient/index'" method="get">
+							 <div class="input-group">
+							  	<input type="text" class="form-control" name="motCle" placeholder="Search...">
+							  	<span class="input-group-btn">
+								  	<button type="submit" class="btn btn-default">
+								      <i class="glyphicon glyphicon-search"></i> 
+							    	</button>
+						    	</span>
+					    	</div>
+						</form>
+					</div>
+					<div class="col-xs-2">
+						<form th:action="@{/Patient/create}">
+							<button type="submit" class="btn btn-success">Create New</button>
+						</form>
+					</div>
+				</div>
+			</div>
+			  
+			<div class="panel-body">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Nom</th>
+							<th>Prénom</th>
+							<th>Adresse</th>
+							<th>Téléphone</th>
+						</tr>
+					</thead>
+					
+					<tbody>
+						<tr th:each="p:${listPatient}">
+							<td th:text="${p.nom}"></td>
+							<td th:text="${p.prenom}"></td>
+							<td th:text="${p.adresse}"></td>
+							<td th:text="${p.telephone}"></td>
+							
+							<td>
+								<a th:href="${'/Patient/'+p.id}">Details</a> |
+								<a th:href="@{/Patient/Edit(id=${p.id})}">Edit</a> |
+							 	<a onclick="return confirm('Are you sure you want to delete this item?');" th:href="@{/Patient/Delete(id=${p.id})}">Delete</a> 
+						 	</td>
+						</tr>
+					</tbody>
+					
+				</table>
+			</div>
+		
+			<div class="panel-footer"><nav aria-label="Page navigation example">
+				  <ul class="pagination">
+				    
+				    <li class="page-item" th:each="pa,status:${pages}" >
+				    	<a class="page-link"th:href="@{Patient(page=${status.index})}" th:text="${status.index}"></a>
+    				</li>
+				    
+				  </ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>

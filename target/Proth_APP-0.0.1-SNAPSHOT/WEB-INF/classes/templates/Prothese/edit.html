@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+<head>
+	<meta charset="utf-8">
+	<title th:text="${pageTitle}"></title>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+	<link href="../css/styles.css" rel="stylesheet"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div th:insert="/shared/navbar :: navbar">  </div>
+	
+	<div class="container">
+		<div class="panel panel-default">
+			<div class="panel-heading">Create Patient</div>
+			  
+			<div class="panel-body">
+				<form action="/Prothese/edit" method="post">
+					<input type="hidden" class="form-control" name="id" th:value="${prothese.id}"/>
+					<div class="row form-row">
+						<div class="col-md-3 form-group">
+					    	<label for="date_lancementProd">Date LANCEMENT de la Production</label>
+					  	</div>
+					  	<div class="col-md-9 form-group">
+					    	<input type="date" class="form-control" id="date_lancementProd" name="dateProd_lancement" th:value="${#dates.format(prothese.dateProd_lancement,'yyyy-MM-dd')}">
+					  	</div>
+				  	</div>
+				  	
+				  	
+				  	<div class="row form-row">
+						<div class="col-md-3 form-group">
+					    	<label for="date_finProd">Date FIN de la Production</label>
+					  	</div>
+					  	<div class="col-md-9 form-group">
+					    	<input type="date" class="form-control" id="date_finProd" name="dateProd_fin" th:value="${#dates.format(prothese.dateProd_fin,'yyyy-MM-dd')}">
+					  	</div>
+				  	</div>
+				  	
+				  	<div class="row form-row">
+						<div class="col-md-3 form-group">
+					    	<label for="date_expedition">Date d'Expedition</label>
+					  	</div>
+					  	<div class="col-md-9 form-group">
+					    	<input type="date" class="form-control" id="date_expedition" name="date_expedition" th:value="${#dates.format(prothese.date_expedition,'yyyy-MM-dd')}">
+					  	</div>
+				  	</div>
+				  	
+				  	<div class="row form-row">
+			  			<div class="col-md-3 form-group">
+					    	<label for="type_exp">Type d'Expedition</label>
+					  	</div>
+					  	<div class="col-md-9 form-group">
+						  	<select class="form-control" id="type_exp" name="type_expedition">
+							    <option th:each="exp : ${typesExpedition}" th:value="${exp}" th:text="${exp}" th:selected="(${exp} == *{prothese.type_expedition})">
+							    </option>
+							</select>
+					  	</div>
+				  	</div>
+				  	
+				  	<div class="row form-row">
+						<div class="col-md-3 form-group">
+					    	<label for="date_livraison">Date de Livraison</label>
+					  	</div>
+					  	<div class="col-md-9 form-group">
+					    	<input type="date" class="form-control" id="date_livraison" name="date_livraison" th:value="${#dates.format(prothese.date_livraison,'yyyy-MM-dd')}">
+					  	</div>
+				  	</div>
+				  	
+				  	<button type="submit" class="btn btn-primary">Mettre a jour</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

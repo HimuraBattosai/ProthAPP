@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+<head>
+	<meta charset="utf-8">
+	<title th:text="${pageTitle}"></title>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+	<link href="../css/styles.css" rel="stylesheet"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div th:insert="/shared/navbar_patient :: navbar">  </div>
+	
+	<div class="container">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h4><strong>Details du Rendez-Vous</strong></h4>
+			</div>
+			  
+			<div class="panel-body">
+				<div class="panel panel-default">
+					<div class="panel-heading">Informations generales</div>
+					  
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-md-12">
+								<table class="table table-striped">
+								   <tbody>
+								     <tr>
+								       <td><strong>Patient</strong></td>
+								       <td th:text="${rdv.getPatient().getNom()+' '+rdv.getPatient().getPrenom()}"></td>
+								     </tr>
+								     <tr>
+								       <td><strong>Therapeute</strong></td>
+								       <td th:text="${rdv.getTherapeute().getNom()}"></td>
+								     </tr>
+								     <tr>
+								       <td><strong>Date</strong></td>
+								       <td th:text="${#temporals.format(rdv.date, 'dd-MM-yyyy')}"></td>
+								     </tr>
+								     <tr>
+								       <td><strong>Heure Debut</strong></td>
+								       <td th:text="${#temporals.format(rdv.heure_debut, 'HH:mm')}"></td>
+								     </tr>
+								     <tr>
+								       <td><strong>Heure Fin</strong></td>
+								       <td th:text="${#temporals.format(rdv.heure_fin, 'HH:mm')}"></td>
+								     </tr>
+								   </tbody>
+								 </table>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="panel panel-default">
+					<div class="panel-heading">Apres Rendez-Vous</div>
+					  
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-md-12">
+								<table class="table table-striped">
+								<form th:action="'/RendezVous/update/'+${rdv.id}" method="post">
+								   <tbody>
+								     <tr>
+								       <td><strong>Presence</strong></td>
+								       <td>
+								       		<label class="checkbox-inline">
+								       			<input th:checked="(${rdv.isPresence().toString()} == 'true')" type="radio" name="presence" value="true">Present
+							       			</label>
+											<label class="checkbox-inline">
+												<input th:checked="(${rdv.isPresence().toString()} == 'false')" type="radio" name="presence" value="false">Absent
+											</label>
+										</td>
+								     </tr>
+								     <tr>
+								       <td><strong>Resultat</strong></td>
+								       <td><textarea th:text="${rdv.resultat}" class="form-control" rows="5" name="resultat"></textarea></td>
+								     </tr>
+								     <tr>
+								     	<td></td>
+								     	<td><button type="submit" class="btn btn-primary">Mettre a jour</button></td>
+								     </tr>
+								   </tbody>
+								</form>
+								 </table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

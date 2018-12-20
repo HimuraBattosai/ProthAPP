@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+<head>
+	<meta charset="utf-8">
+	<title th:text="${pageTitle}"></title>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+	<link href="../css/styles.css" rel="stylesheet"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div th:insert="/shared/navbar_patient :: navbar">  </div>
+	
+	<div class="container">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<div class="row">
+					<div class="col-xs-10">
+						<h4><strong>Details de la commande</strong></h4>
+					</div>
+					<div class="col-xs-2">
+						<h4>
+							<span class="label label-success"><strong th:text="${commande.getProthese().getState()}"></strong></span>
+						</h4>
+					</div>
+				</div>
+			</div>
+			  
+			<div class="panel-body">
+				<div class="panel panel-default">
+					<div class="panel-heading">Informations generales</div>
+					  
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-md-12">
+								<table class="table table-striped">
+								   <tbody>
+								     <tr>
+								       <td><strong>Patient</strong></td>
+								       <td th:text="${commande.getPatient().getNom()+' '+commande.getPatient().getPrenom()}"></td>
+								     </tr>
+								     <tr>
+								       <td><strong>Prothese</strong></td>
+								       <td th:text="${commande.getProthese().getProthese_details().getReference()}"></td>
+								     </tr>
+								     <tr>
+								       <td><strong>Therapeute</strong></td>
+								       <td th:text="${commande.getTherapeute().getNom()}"></td>
+								     </tr>
+								     <tr>
+								       <td><strong>Prix</strong></td>
+								       <td th:text="${commande.prix}"></td>
+								     </tr>
+								     <tr>
+								       <td><strong>Methode de payement</strong></td>
+								       <td th:text="${commande.methode_payement}"></td>
+								     </tr>
+								     <tr>
+								       <td><strong>Date de la commande</strong></td>
+								       <td th:text="${#dates.format(commande.createdAt,'dd-MM-yyyy HH:mm')}"></td>
+								     </tr>
+								   </tbody>
+								 </table>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<div class="row">
+							<div class="col-xs-10">Service de production</div>
+							<div class="col-xs-2">
+								<form th:action="${'/Prothese/edit/'+commande.getProthese().getId()}" method="get">
+									 <div class="input-group">
+									  	<button type="submit" class="btn btn-default">Mettre a jour</button>
+							    	</div>
+								</form>
+							</div>
+						</div>
+					</div>
+					  
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-md-12">
+								<table class="table table-striped">
+								   <tbody>
+								     <tr>
+								       <td><strong>Date LANCEMENT de la Production</strong></td>
+								       <td th:text="${#dates.format(commande.getProthese().getDateProd_lancement(),'dd-MM-yyyy')}"></td>
+								     </tr>
+								     <tr>
+								       <td><strong>Date FIN de la Production</strong></td>
+								       <td th:text="${#dates.format(commande.getProthese().getDateProd_fin(),'dd-MM-yyyy')}"></td>
+								     </tr>
+								     <tr>
+								       <td><strong>Date d'Expedition</strong></td>
+								       <td th:text="${#dates.format(commande.getProthese().getDate_expedition(),'dd-MM-yyyy')}"></td>
+								     </tr>
+								     <tr>
+								       <td><strong>Type d'Expedition</strong></td>
+								       <td th:text="${commande.getProthese().getType_expedition()}"></td>
+								     </tr>
+								     <tr>
+								       <td><strong>Date de Livraison</strong></td>
+								       <td th:text="${#dates.format(commande.getProthese().getDate_livraison(),'dd-MM-yyyy')}"></td>
+								     </tr>
+								   </tbody>
+								 </table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

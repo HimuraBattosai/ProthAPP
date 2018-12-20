@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title th:text="${pageTitle}"></title>
+<link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css"
+th:href="@{css/bootstrap.min.css}"/>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<th:block th:if="${patientID!=null}">
+		<div th:insert="/shared/navbar_patient :: navbar">  </div>
+	</th:block>
+	<th:block th:if="${patientID==null}">
+		<div th:insert="/shared/navbar :: navbar">  </div>
+	</th:block>
+	
+	<div class="container">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<div class="row">
+					<div class="col-xs-4">
+						<h4>Catalogue des Protheses</h4>
+					</div>
+					<div class="col-xs-6">
+						 <form th:action="'/ProtheseCatalogue/index'" method="get">
+							 <div class="input-group">
+							  	<input type="text" class="form-control" name="motCle" placeholder="Search...">
+							  	<span class="input-group-btn">
+								  	<button type="submit" class="btn btn-default">
+								      <i class="glyphicon glyphicon-search"></i> 
+							    	</button>
+						    	</span>
+					    	</div>
+						</form>
+					</div>
+					<div class="col-xs-2">
+						<form th:action="@{/ProtheseCatalogue/create}">
+							<button type="submit" class="btn btn-success">Create New</button>
+						</form>
+					</div>
+				</div>
+			</div>
+			  
+			<div class="panel-body">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Référence</th>
+							<th>Description</th>
+							<th>Type</th>
+							<th>Prix</th>
+						</tr>
+					</thead>
+					
+					<tbody>
+						<tr th:each="p:${listProthese}">
+							<td th:text="${p.reference}"></td>
+							<td th:text="${p.descriptif}"></td>
+							<td th:text="${p.type}"></td>
+							<td th:text="${p.prix}"></td>
+							<th:block th:if="${patientID!=null}">
+								<td>
+									<form action="/Commande/create" method="get">
+										 <div class="input-group">
+										  	<input type="hidden" class="form-control" name="patientID" th:value="${patientID}">
+										  	<input type="hidden" class="form-control" name="protheseID" th:value="${p.id}">
+										  	<button type="submit" class="btn btn-danger">Commander</button>
+								    	</div>
+									</form>
+								</td>
+							</th:block>
+							<th:block th:if="${patientID==null}">
+								<td>
+									<a th:href="@{ProtheseCatalogue/details(id=${p.id})}">Details</a> | 
+									<a th:href="@{ProtheseCatalogue/edit(id=${p.id})}">Edit</a> |
+									<a onclick="return confirm('Are you sure you want to delete this item?');" th:href="@{ProtheseCatalogue/delete(id=${p.id})}">Delete</a> 
+								</td>
+							</th:block>
+						</tr>
+					</tbody>
+					
+				</table>
+			</div>
+		
+			<div class="panel-footer"><nav aria-label="Page navigation example">
+				  <ul class="pagination">
+				    
+				    <li class="page-item" th:each="pa,status:${pages}" >
+				    <a class="page-link"th:href="@{ProtheseCatalogue(page=${status.index})}" th:text="${status.index}"></a>
+				    </li>
+				    
+				  </ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

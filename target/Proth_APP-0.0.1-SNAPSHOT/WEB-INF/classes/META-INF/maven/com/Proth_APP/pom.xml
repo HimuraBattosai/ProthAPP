@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com</groupId>
+	<artifactId>Proth_APP</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>Proth_APP</name>
+	<description>Demo project for Spring Boot</description>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.1.1.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		
+		<!--<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>-->
+        
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>org.thymeleaf.extras</groupId>
+		    <artifactId>thymeleaf-extras-java8time</artifactId>
+		    <version>3.0.0.RELEASE</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!--
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<optional>true</optional>
+		</dependency>
+		-->
+		
+		<!-- SELENIUM -->
+		<dependency>
+		    <groupId>org.seleniumhq.selenium</groupId>
+		    <artifactId>selenium-java</artifactId>
+		    <version>3.141.59</version>
+		</dependency>
+		
+		<!-- GATLING Load Testing -->
+		<dependency>
+			<groupId>io.gatling.highcharts</groupId>
+		    <artifactId>gatling-charts-highcharts</artifactId>
+		    <version>3.0.1.1</version>
+			<scope>test</scope>
+	    </dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			
+			<!-- GATLING -->
+			<plugin>
+		        <groupId>io.gatling</groupId>
+		        <artifactId>gatling-maven-plugin</artifactId>
+		        <version>3.0.1</version>
+		        <configuration>
+		          <simulationClass>TPCase01</simulationClass>
+		          <jvmArgs>
+		            <jvmArg>-Dusers=${users}</jvmArg>
+		          </jvmArgs>
+		          <propagateSystemProperties>true</propagateSystemProperties>
+		        </configuration>
+	      	</plugin>
+	      	
+	      	<!-- COBERTURA -->
+			<plugin>
+			  <groupId>org.codehaus.mojo</groupId>
+			  <artifactId>cobertura-maven-plugin</artifactId>
+			  <version>2.7</version>
+			</plugin>
+		</plugins>
+	</build>
+
+	<!-- MAVEN SITE Reporting Plugins -->
+	<reporting>
+	  <plugins> 
+	
+	    <plugin>
+	      <groupId>org.apache.maven.plugins</groupId>
+	      <artifactId>maven-site-plugin</artifactId>
+	      <version>3.3</version>
+	    </plugin>
+	
+	    <plugin>
+	      <groupId>org.apache.maven.plugins</groupId>
+	      <artifactId>maven-project-info-reports-plugin</artifactId>
+	      <version>2.7</version>
+	    </plugin>
+	
+	    <plugin>
+	      <groupId>org.codehaus.mojo</groupId>
+	      <artifactId>cobertura-maven-plugin</artifactId>
+	      <version>2.7</version>
+	    </plugin>
+	
+	  </plugins>
+	</reporting>
+	
+	<!-- NEXUS Repository -->
+	<repositories>
+	   <!-- If you want only to download dependencies from Nexus -->
+	  <repository>
+	    <id>maven-group</id>
+	    <url>http://localhost:8081/nexus/content/groups/group-maven/</url>
+	  </repository>
+	</repositories>
+	<distributionManagement>
+	  <!-- If you want to publish to Nexus [SNAPSHOT + RELEASE] -->
+	  <snapshotRepository>
+	    <id>nexus-snapshots</id>
+	    <url>http://localhost:8081/nexus/content/repositories/snapshots/</url>
+	  </snapshotRepository>
+	  <repository>
+	    <id>nexus-releases</id>
+	    <url>http://localhost:8081/nexus/content/repositories/releases/</url>
+	  </repository>
+	</distributionManagement>
+</project>

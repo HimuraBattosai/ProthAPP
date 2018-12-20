@@ -1,0 +1,26 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<nav th:fragment="navbar" class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand">Proth'APP</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li th:class="${#strings.equals(pageTitle,'Liste des patients')} ? active : ''">
+      	<a href="/Patient">Patients</a>
+      </li>
+      <li th:class="${#strings.equals(pageTitle,'Catalogue')} ? active : ''">
+      <a href="/ProtheseCatalogue/index">Catalogue</a>
+      </li>
+      <li th:class="${#strings.equals(pageTitle,'Commandes')} ? active : ''">
+      <a href="/Commande/index">Commandes</a>
+      </li>
+      <li th:class="${#strings.equals(pageTitle,'Exercices')} ? active : ''">
+      <a href="/Exercice">Exercices</a>
+      </li>
+      <li th:class="${#strings.equals(pageTitle,'Programme exercices')} ? active : ''">
+      <a href="/ExerciceProg/index">Programme d'exercices</a>
+      </li>
+    </ul>
+  </div>
+</nav>

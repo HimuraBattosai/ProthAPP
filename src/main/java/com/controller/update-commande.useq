@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence-diagram version="1.2.2" icons="true" generate-combined-fragments="true">  
+  <object id="1" language="java" name="com.entities.Therapeute" project="Proth_APP" 
+    file="/Proth_APP/src/main/java/com/entities/Therapeute.java" binary="false" label="therapeute" type="class" 
+    autoSize="true">    
+    <position height="-1" width="-1" x="143" y="0"/>    
+    <execution id="2">      
+      <position height="149" width="106" x="5" y="127"/>    
+    </execution>    
+    <execution id="5">      
+      <position height="24" width="7" x="55" y="204"/>    
+    </execution>    
+    <execution id="6">      
+      <position height="215" width="106" x="5" y="325"/>    
+    </execution>    
+    <execution id="9">      
+      <position height="24" width="7" x="55" y="458"/>    
+    </execution>    
+    <execution id="10">      
+      <position height="151" width="106" x="5" y="549"/>    
+    </execution>    
+    <execution id="13">      
+      <position height="24" width="7" x="55" y="628"/>    
+    </execution>    
+    <execution id="14">      
+      <position height="145" width="106" x="5" y="728"/>    
+    </execution>    
+    <execution id="17">      
+      <position height="24" width="7" x="55" y="801"/>    
+    </execution>  
+  </object>  
+  <object id="18" language="java" name="com.controller.CommandeController" project="Proth_APP" 
+    file="/Proth_APP/src/main/java/com/controller/CommandeController.java" binary="false" label="commandeController" 
+    type="class" autoSize="true">    
+    <position height="-1" width="-1" x="218" y="0"/>    
+    <execution id="4">      
+      <position height="101" width="174" x="115" y="151"/>    
+    </execution>    
+    <execution id="8">      
+      <position height="167" width="174" x="115" y="349"/>    
+    </execution>  
+  </object>  
+  <object id="27" language="java" name="com.controller.ProtheseController" project="Proth_APP" 
+    file="/Proth_APP/src/main/java/com/controller/ProtheseController.java" binary="false" label="protheseController" 
+    type="class" autoSize="true">    
+    <position height="-1" width="-1" x="324" y="0"/>    
+    <execution id="12">      
+      <position height="103" width="160" x="293" y="573"/>    
+    </execution>    
+    <execution id="16">      
+      <position height="97" width="160" x="293" y="752"/>    
+    </execution>  
+  </object>  
+  <object id="34" language="java" name="com.entities.Commande" project="Proth_APP" 
+    file="/Proth_APP/src/main/java/com/entities/Commande.java" binary="false" label="commande" type="class" 
+    autoSize="true">    
+    <position height="-1" width="-1" x="1189" y="0"/>    
+    <execution id="25">      
+      <position height="72" width="102" x="1538" y="420"/>    
+    </execution>  
+  </object>  
+  <object id="37" language="java" name="com.repository.CommandeRepository" project="Proth_APP" 
+    file="/Proth_APP/src/main/java/com/repository/CommandeRepository.java" binary="false" label="commandeRepository" 
+    type="interface" autoSize="true">    
+    <position height="-1" width="-1" x="1329" y="0"/>    
+    <execution id="20">      
+      <position height="24" width="179" x="1644" y="175"/>    
+    </execution>    
+    <execution id="23">      
+      <position height="24" width="179" x="1644" y="373"/>    
+    </execution>  
+  </object>  
+  <object id="38" language="java" name="com.entities.Prothese" project="Proth_APP" 
+    file="/Proth_APP/src/main/java/com/entities/Prothese.java" binary="false" label="prothese" type="class" 
+    autoSize="true">    
+    <position height="-1" width="-1" x="906" y="0"/>    
+    <execution id="36">      
+      <position height="24" width="88" x="987" y="444"/>    
+    </execution>  
+  </object>  
+  <object id="39" language="java" name="com.repository.ProtheseRepository" project="Proth_APP" 
+    file="/Proth_APP/src/main/java/com/repository/ProtheseRepository.java" binary="false" label="protheseRepository" 
+    type="interface" autoSize="true">    
+    <position height="-1" width="-1" x="994" y="0"/>    
+    <execution id="29">      
+      <position height="24" width="165" x="1297" y="597"/>    
+    </execution>    
+    <execution id="32">      
+      <position height="24" width="165" x="1297" y="776"/>    
+    </execution>  
+  </object>  
+  <message id="3" operation="index(java.lang.Long,org.springframework.ui.Model):java.lang.String" asynchronous="false">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="4"/>  
+  </message>  
+  <message id="7" operation="details(org.springframework.ui.Model,java.lang.Long):java.lang.String" asynchronous="false">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="8"/>  
+  </message>  
+  <message id="11" operation="edit(java.lang.Long,org.springframework.ui.Model):java.lang.String" asynchronous="false">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="12"/>  
+  </message>  
+  <message id="15" 
+    operation="update(org.springframework.ui.Model,com.entities.Prothese,org.springframework.validation.BindingResult):java.lang.String" 
+    asynchronous="false">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="16"/>  
+  </message>  
+  <message id="19" operation="findAll():java.lang.Iterable&lt;T&gt;" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="20"/>  
+  </message>  
+  <message id="21" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="5"/>  
+  </message>  
+  <message id="22" asynchronous="false">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="23"/>  
+  </message>  
+  <message id="24" operation="getProthese():com.entities.Prothese" asynchronous="false">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="25"/>  
+  </message>  
+  <message id="26" asynchronous="false">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="9"/>  
+  </message>  
+  <message id="28" operation="findById(ID):java.util.Optional&lt;T&gt;" asynchronous="false">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="29"/>  
+  </message>  
+  <message id="30" asynchronous="false">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="13"/>  
+  </message>  
+  <message id="31" operation="save(S):S" asynchronous="false">    
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="32"/>  
+  </message>  
+  <message id="33" asynchronous="false">    
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="17"/>  
+  </message>  
+  <message id="35" operation="getState():java.lang.String" asynchronous="false">    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="36"/>  
+  </message>
+</sequence-diagram>

@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.2" icons="true" always-add-relationships="true" generalizations="true" realizations="true" 
+  associations="true" dependencies="true" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="com.entities.User" project="Proth_APP" 
+    file="/Proth_APP/src/main/java/com/entities/User.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="118" y="101"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="com.entities.Commande" project="Proth_APP" 
+    file="/Proth_APP/src/main/java/com/entities/Commande.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="125" y="774"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="com.entities.Exercice" project="Proth_APP" 
+    file="/Proth_APP/src/main/java/com/entities/Exercice.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="467" y="326"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="com.entities.ExerciceProg" project="Proth_APP" 
+    file="/Proth_APP/src/main/java/com/entities/ExerciceProg.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="262" y="571"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="com.entities.ProtheseSuivi" project="Proth_APP" 
+    file="/Proth_APP/src/main/java/com/entities/ProtheseSuivi.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="992" y="763"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="com.entities.ProtheseCatalogue" project="Proth_APP" 
+    file="/Proth_APP/src/main/java/com/entities/ProtheseCatalogue.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1189" y="608"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="com.entities.Prothese" project="Proth_APP" 
+    file="/Proth_APP/src/main/java/com/entities/Prothese.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="586" y="727"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="com.entities.RendezVous" project="Proth_APP" 
+    file="/Proth_APP/src/main/java/com/entities/RendezVous.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="592" y="109"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="com.entities.Patient" project="Proth_APP" 
+    file="/Proth_APP/src/main/java/com/entities/Patient.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="986" y="334"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="com.entities.Therapeute" project="Proth_APP" 
+    file="/Proth_APP/src/main/java/com/entities/Therapeute.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="111" y="296"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="com.entities.Mesures" project="Proth_APP" 
+    file="/Proth_APP/src/main/java/com/entities/Mesures.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1367" y="408"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="com.entities.MesureMembreInf" project="Proth_APP" 
+    file="/Proth_APP/src/main/java/com/entities/MesureMembreInf.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1261" y="765"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="com.entities.MesureMembreSup" project="Proth_APP" 
+    file="/Proth_APP/src/main/java/com/entities/MesureMembreSup.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1440" y="767"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <association id="14">    
+    <end type="SOURCE" refId="3" navigable="true">      
+      <attribute id="15" name="exerciceList">        
+        <position height="0" width="0" x="-12" y="60"/>      
+      </attribute>      
+      <multiplicity id="16" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="-12" y="60"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true">      
+      <attribute id="17" name="exercice">        
+        <position height="0" width="0" x="-62" y="32"/>      
+      </attribute>      
+      <multiplicity id="18" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-62" y="32"/>      
+      </multiplicity>    
+    </end>    
+    <display labels="false" multiplicity="true"/>  
+  </association>  
+  <association id="19">    
+    <end type="SOURCE" refId="5" navigable="true">      
+      <attribute id="20" name="prothese">        
+        <position height="0" width="0" x="-228" y="-5"/>      
+      </attribute>      
+      <multiplicity id="21" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-228" y="-5"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true">      
+      <attribute id="22" name="historique_suivi">        
+        <position height="0" width="0" x="-26" y="-9"/>      
+      </attribute>      
+      <multiplicity id="23" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="-26" y="-9"/>      
+      </multiplicity>    
+    </end>    
+    <display labels="false" multiplicity="true"/>  
+  </association>  
+  <generalization id="24">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="1"/>  
+  </generalization>  
+  <association id="25">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="26" name="mesure">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="27" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="false" multiplicity="true"/>  
+  </association>  
+  <association id="28">    
+    <end type="SOURCE" refId="9" navigable="true">      
+      <attribute id="29" name="commandeList">        
+        <position height="0" width="0" x="3" y="45"/>      
+      </attribute>      
+      <multiplicity id="30" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="3" y="45"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true">      
+      <attribute id="31" name="patient">        
+        <position height="0" width="0" x="-113" y="-32"/>      
+      </attribute>      
+      <multiplicity id="32" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-113" y="-32"/>      
+      </multiplicity>    
+    </end>    
+    <display labels="false" multiplicity="true"/>  
+  </association>  
+  <generalization id="33">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="11"/>  
+  </generalization>  
+  <association id="34">    
+    <end type="SOURCE" refId="2" navigable="true">      
+      <attribute id="35" name="prothese">        
+        <position height="0" width="0" x="-228" y="-5"/>      
+      </attribute>      
+      <multiplicity id="36" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-228" y="-5"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true">      
+      <attribute id="37" name="commande">        
+        <position height="0" width="0" x="3" y="45"/>      
+      </attribute>      
+      <multiplicity id="38" minimum="0" maximum="1">        
+        <position height="0" width="0" x="3" y="45"/>      
+      </multiplicity>    
+    </end>    
+    <display labels="false" multiplicity="true"/>  
+  </association>  
+  <association id="39">    
+    <end type="SOURCE" refId="9" navigable="true">      
+      <attribute id="40" name="mesureList">        
+        <position height="0" width="0" x="-5" y="328"/>      
+      </attribute>      
+      <multiplicity id="41" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="-5" y="328"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true">      
+      <attribute id="42" name="patient">        
+        <position height="0" width="0" x="3" y="-10"/>      
+      </attribute>      
+      <multiplicity id="43" minimum="0" maximum="1">        
+        <position height="0" width="0" x="3" y="-10"/>      
+      </multiplicity>    
+    </end>    
+    <display labels="false" multiplicity="true"/>  
+  </association>  
+  <generalization id="44">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="11"/>  
+  </generalization>  
+  <association id="45">    
+    <end type="SOURCE" refId="2" navigable="true">      
+      <attribute id="46" name="therapeute">        
+        <position height="0" width="0" x="11" y="19"/>      
+      </attribute>      
+      <multiplicity id="47" minimum="0" maximum="1">        
+        <position height="0" width="0" x="11" y="19"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="10" navigable="true">      
+      <attribute id="48" name="commande">        
+        <position height="0" width="0" x="3" y="45"/>      
+      </attribute>      
+      <multiplicity id="49" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="3" y="45"/>      
+      </multiplicity>    
+    </end>    
+    <display labels="false" multiplicity="true"/>  
+  </association>  
+  <association id="50">    
+    <end type="SOURCE" refId="6" navigable="true">      
+      <attribute id="51" name="protheseList">        
+        <position height="0" width="0" x="-228" y="-5"/>      
+      </attribute>      
+      <multiplicity id="52" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="-228" y="-5"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true">      
+      <attribute id="53" name="prothese_details">        
+        <position height="0" width="0" x="-153" y="87"/>      
+      </attribute>      
+      <multiplicity id="54" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-153" y="87"/>      
+      </multiplicity>    
+    </end>    
+    <display labels="false" multiplicity="true"/>  
+  </association>  
+  <association id="55">    
+    <end type="SOURCE" refId="4" navigable="true">      
+      <attribute id="56" name="therapeute">        
+        <position height="0" width="0" x="11" y="19"/>      
+      </attribute>      
+      <multiplicity id="57" minimum="0" maximum="1">        
+        <position height="0" width="0" x="11" y="19"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="10" navigable="true">      
+      <attribute id="58" name="exercice">        
+        <position height="0" width="0" x="-12" y="60"/>      
+      </attribute>      
+      <multiplicity id="59" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="-12" y="60"/>      
+      </multiplicity>    
+    </end>    
+    <display labels="false" multiplicity="true"/>  
+  </association>  
+  <association id="60">    
+    <end type="SOURCE" refId="10" navigable="true">      
+      <attribute id="61" name="rdv">        
+        <position height="0" width="0" x="-186" y="-9"/>      
+      </attribute>      
+      <multiplicity id="62" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="-186" y="-9"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true">      
+      <attribute id="63" name="therapeute">        
+        <position height="0" width="0" x="11" y="19"/>      
+      </attribute>      
+      <multiplicity id="64" minimum="0" maximum="1">        
+        <position height="0" width="0" x="11" y="19"/>      
+      </multiplicity>    
+    </end>    
+    <display labels="false" multiplicity="true"/>  
+  </association>  
+  <generalization id="65">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="1"/>  
+  </generalization>  
+  <association id="66">    
+    <end type="SOURCE" refId="8" navigable="true">      
+      <attribute id="67" name="patient">        
+        <position height="0" width="0" x="-113" y="-32"/>      
+      </attribute>      
+      <multiplicity id="68" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-113" y="-32"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true">      
+      <attribute id="69" name="rdvList">        
+        <position height="0" width="0" x="-186" y="-9"/>      
+      </attribute>      
+      <multiplicity id="70" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="-186" y="-9"/>      
+      </multiplicity>    
+    </end>    
+    <display labels="false" multiplicity="true"/>  
+  </association>  
+  <association id="71">    
+    <bendpoint x="596" y="416"/>    
+    <bendpoint x="715" y="381"/>    
+    <end type="SOURCE" refId="4" navigable="true">      
+      <attribute id="72" name="patient">        
+        <position height="0" width="0" x="-113" y="-32"/>      
+      </attribute>      
+      <multiplicity id="73" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-113" y="-32"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true">      
+      <attribute id="74" name="exerciceList">        
+        <position height="0" width="0" x="-12" y="60"/>      
+      </attribute>      
+      <multiplicity id="75" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="-12" y="60"/>      
+      </multiplicity>    
+    </end>    
+    <display labels="false" multiplicity="true"/>  
+  </association>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="false" package="false" protected="false" private="false" static="true"/>  
+  </classifier-display>  
+  <association-display labels="false" multiplicity="true"/>
+</class-diagram>

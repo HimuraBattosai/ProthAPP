@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+<head>
+	<meta charset="utf-8">
+	<title th:text="${pageTitle}"></title>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+	<link href="../css/styles.css" rel="stylesheet"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div th:insert="/shared/navbar_patient :: navbar">  </div>
+	
+	<div class="container">
+		<div class="panel panel-default">
+			<div class="panel-heading">Create Order</div>
+			  
+			<div class="panel-body">
+				<form action="/Commande/create" method="post">
+					<div class="row form-row">
+					  <div class="col-md-3 form-group">
+					    <label for="patient">Patient</label>
+					  </div>
+					  <div class="col-md-9 form-group">
+						  	<select class="form-control" id="patient" name="patientID">
+							    <option th:each="pat : ${listPatients}" th:value="${pat.id}" th:selected="(${pat.id} == *{patient.id})" 
+							    		th:text="${pat.nom}+' '+${pat.prenom}">
+							    </option>
+							</select>
+					  </div>
+				  	</div>
+				  	
+				  	<div class="row form-row">
+					  <div class="col-md-3 form-group">
+					    <label for="prothese">Prothese</label>
+					  </div>
+					  <div class="col-md-9 form-group">
+						  	<select class="form-control" id="prothese" name="protheseID">
+							    <option th:each="prot : ${listProtheses}" th:value="${prot.id}" th:selected="(${prot.id} == *{prothese.id})" 
+							    		th:text="${prot.reference}">
+							    </option>
+							</select>
+					  </div>
+				  	</div>
+				  	
+				  	<div class="row form-row">
+					  <div class="col-md-3 form-group">
+					    <label for="prix">Prix</label>
+					  </div>
+					  <div class="col-md-3 form-group">
+					  	<input type="number" class="form-control" id="prix" name="prix" th:value="${prothese.prix}">
+					  </div>
+					  
+					  <div class="col-md-1"></div>
+					  
+					  <div class="col-md-2 form-group">
+					    <label for="methode_payement">Methode de Payement</label>
+					  </div>
+					  <div class="col-md-3 form-group">
+						  	<select class="form-control" id="methode_payement" name="methode_payement">
+							    <option th:each="pay : ${listPayements}" th:value="${pay}" th:text="${pay}">
+							    </option>
+							</select>
+					  </div>
+				  	</div>
+				  	
+				  	<div class="row form-row">
+					  <div class="col-md-3 form-group">
+					    <label for="mesures">Mesures</label>
+					  </div>
+					  <div class="col-md-6 form-group">
+						  	<select class="form-control" id="mesures" name="mesureID">
+							    <option th:each="mes : ${listMesures}" th:value="${mes.id}" th:text="${mes.toString()}">
+							    </option>
+							</select>
+					  </div>
+					  <div class="col-md-3">
+					  		<button type="button" class="btn btn-success" th:onclick="location.href='/Patient/[[${patientID}]]/Mesure/index'">
+					  			Add Mesures
+					  		</button>
+					  </div>
+				  	</div>
+				  	
+				  	<button type="submit" class="btn btn-primary">Valider la commande</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

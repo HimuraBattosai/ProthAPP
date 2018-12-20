@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+<head>
+	<meta charset="utf-8">
+	<title th:text="${pageTitle}"></title>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+	<link href="\css/styles.css" rel="stylesheet"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div th:insert="/shared/navbar_patient :: navbar">  </div>
+	
+	<div class="container">
+		<div class="panel panel-default">
+			<div class="panel-heading"><h4>Liste des Rendez-Vous</h4></div>
+				<table class="table table-striped">
+				    <thead>
+				      <tr>
+				        <th>Patient</th>
+				        <th>Date</th>
+				        <th>Heure debut</th>
+				        <th>Heure fin</th>
+				        <th>Sujet</th>
+				      </tr>
+				    </thead>
+				    <tbody>
+				    	<form th:action="'/Patient/'+${patientID}+'/RendezVous/create'" method="post">
+					      <tr>
+					      	<td>
+					      		<strong>NEW</strong>
+					      	</td>
+					      	<td>
+					      		<input type="date" class="form-control" name="date" required>
+					      	</td>
+					      	<td>
+					      		<input type="time" class="form-control" name="heure_debut" required>
+					      	</td>
+					      	<td>
+					      		<input type="time" class="form-control" name="heure_fin" required>
+					      	</td>
+					      	<td>
+					      		<input type="text" class="form-control" name="sujet" required>
+					      	</td>
+					      	<td>
+					      		<button type="submit" class="btn btn-primary">Create new Rendez-Vous</button>
+					      	</td>
+					      </tr>
+				      	</form>
+				     	<tr th:each="rdv : ${listRDV}">
+				        	<td th:text="${rdv.getTherapeute().getNom()+' '+rdv.getTherapeute().getPrenom()}"></td>
+				        	<td th:text="${#temporals.format(rdv.date, 'dd-MM-yyyy')}"></td>
+				        	<td th:text="${#temporals.format(rdv.heure_debut, 'HH:mm')}"></td>
+				        	<td th:text="${#temporals.format(rdv.heure_fin, 'HH:mm')}"></td>
+				        	<td th:text="${rdv.sujet}"></td>
+				        	<td>
+				        		<form th:action="'/RendezVous/'+${rdv.id}">
+				      				<button type="submit" class="btn btn-success btn-xs">Details</button>
+				      			</form>
+				      		</td>
+				      	</tr>
+				    </tbody>
+				  </table>
+		</div>
+	</div>
+</body>
+</html>

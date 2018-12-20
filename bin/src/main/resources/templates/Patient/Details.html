@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+<head>
+	<meta charset="utf-8">
+	<title th:text="${pageTitle}"></title>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+	<link href="../css/styles.css" rel="stylesheet"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div th:insert="/shared/navbar_patient :: navbar">  </div>
+	
+	<div class="container">
+		<div class="panel panel-default">
+			<div class="panel-heading">Details Patient</div>
+			  
+			<div class="panel-body">
+				<div class="row">
+					<div class="col-md-2">
+						<img src="\images/user.png" style="width: 100px;">
+					</div>
+					<div class="col-md-10">
+						<table class="table table-striped">
+						   <tbody>
+						     <tr>
+						       <td><strong>Nom</strong></td>
+						       <td th:text="${patient.nom}"></td>
+						     </tr>
+						     <tr>
+						       <td><strong>Prenom</strong></td>
+						       <td th:text="${patient.prenom}"></td>
+						     </tr>
+						     <tr>
+						       <td><strong>Sexe</strong></td>
+						       <td th:text="${patient.sexe.getValue()}"></td>
+						     </tr>
+						     <tr>
+						       <td><strong>Date Naissance</strong></td>
+						       <td th:text="${#dates.format(patient.date_naissance,'dd-MM-yyyy')}"></td>
+						     </tr>
+						     <tr>
+						       <td><strong>Taille</strong></td>
+						       <td th:text="${patient.taille+' cm'}"></td>
+						     </tr> 
+						     <tr>
+						       <td><strong>Poids</strong></td>
+						       <td th:text="${patient.poids+' kg'}"></td>
+						     </tr> 
+						     <tr>
+						       <td><strong>Groupe Sanguin</strong></td>
+						       <td th:text="${patient.grp_sanguin.getValue()}"></td>
+						     </tr> 
+						     <tr>
+						       <td><strong>Telephone</strong></td>
+						       <td th:text="${patient.telephone}"></td>
+						     </tr> 
+						     <tr>
+						       <td><strong>Adresse</strong></td>
+						       <td th:text="${patient.adresse}"></td>
+						     </tr>
+						   </tbody>
+						 </table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

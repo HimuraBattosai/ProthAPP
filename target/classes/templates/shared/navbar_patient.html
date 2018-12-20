@@ -1,0 +1,35 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<nav th:fragment="navbar" class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" th:text="${patientName}"></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li th:class="${#strings.equals(pageTitle,'Fiche du patient')} ? active : ''">
+      	<a th:href="${'/Patient/'+patientID}">Fiche du patient</a>
+      </li>
+      <li th:class="${#strings.equals(pageTitle,'Fiche de mesures')} ? active : ''">
+      	<a th:href="${'/Patient/'+patientID+'/Mesure/index'}">Fiche de mesures</a>
+      </li>
+      <li th:class="${#strings.equals(pageTitle,'Commandes')} ? active : ''">
+      	<a th:href="${'/Patient/'+patientID+'/Commande/index'}">Commandes</a>
+      </li>
+      <li th:class="${#strings.equals(pageTitle,'Consultations')} ? active : ''">
+      	<a th:href="${'/Patient/'+patientID+'/RendezVous/index'}">Consultations</a>
+      </li>
+      <li th:class="${#strings.equals(pageTitle,'Exercices')} ? active : ''">
+      	<a th:href="${'/Patient/'+patientID+'/ExerciceProg/index'}">Programme d'exercices</a>
+      </li>
+      <li th:class="${#strings.equals(pageTitle,'Suivi')} ? active : ''">
+      	<a href="#">Suivi</a>
+      </li>
+    </ul>
+    
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+      	<a class="navbar-brand" href="/Patient">HOME</a>
+      </li>
+    </ul>
+  </div>
+</nav>

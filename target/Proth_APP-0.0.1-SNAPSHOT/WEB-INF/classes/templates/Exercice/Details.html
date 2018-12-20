@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+<head>
+	<meta charset="utf-8">
+	<title th:text="${pageTitle}"></title>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+	<link href="../css/styles.css" rel="stylesheet"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div th:insert="/shared/navbar :: navbar">  </div>
+	
+	<div class="container">
+		<div class="panel panel-default">
+			<div class="panel-heading">Details exercice</div>
+			  
+			<div class="panel-body">
+				<div class="row">
+					<div class="col-md-2">
+						
+					</div>
+					<div class="col-md-10">
+						<table class="table table-striped">
+						   <tbody>
+						     <tr>
+						       <td><strong>Description</strong></td>
+						       <td th:text="${exercice.description}"></td>
+						     </tr>
+						     <tr>
+						       <td><strong>Lien</strong></td>
+						       <td th:text="${exercice.link}"></td>
+						     </tr>
+						     
+						   </tbody>
+						 </table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
