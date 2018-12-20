@@ -48,8 +48,8 @@ pipeline{
 				[
 					[
 						$class: 'MavenPackage', mavenAssetList: 
-						[[classifier: '', extension: '', filePath: 'target/Proth_APP-0.0.1']], 
-						mavenCoordinate: [artifactId: 'Proth_APP-war', groupId: 'com', packaging: 'war', version: '0.0.1']
+						[[classifier: '', extension: '', filePath: 'target/Proth_APP-0.0.1.war']], 
+						mavenCoordinate: [artifactId: 'Proth_APP', groupId: 'com', packaging: 'war', version: '0.0.1']
 					]
 				]
 			}
