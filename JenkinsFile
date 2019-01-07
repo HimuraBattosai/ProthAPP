@@ -5,42 +5,82 @@ pipeline{
 		jdk 'JAVA_8'
 	}
 	stages{
-		stage('STEP 1 - Compile'){
+		stage('Build'){
 			steps{
 				bat 'mvn compile'
 			}
 		}
 		
-		stage('STEP 2 - Unit Test'){
-			steps{
-				bat 'mvn test'
-				bat 'mvn cobertura:cobertura'
-			}
-			post{
-				success{
-					junit 'target/surefire-reports/**/*.xml'
+		stage('Test'){
+			parallel {
+
+		        stage('JUnit') {
+					steps {
+						bat 'mvn test'
+					}
+					post{
+						success{
+							junit 'target/surefire-reports/**/*.xml'
+						}
+					}
+		        }
+
+		        stage('Code Coverage') {
+					steps {
+					bat 'mvn cobertura:cobertura'
+					}
+		        }
+
+		        stage('Performance Test'){
+					steps{
+						bat 'mvn gatling:test'
+					}
 				}
-			}
+	      	}	
 		}
-		
-		stage('STEP 3 - Build'){
-			steps{
-				bat 'mvn install'
-			}
-			post{
-				success{
-					junit 'target/surefire-reports/**/*.xml'
+
+		stage('Code Analysis'){
+			parallel {
+
+		        stage('CheckStyle') {
+					steps {
+						bat 'mvn checkstyle:checkstyle'
+					}
+					post{
+						success{
+							junit 'target/surefire-reports/**/*.xml'
+						}
+					}
+		        }
+
+		        stage('FindBugs') {
+					steps {
+					bat 'mvn findbugs:findbugs'
+					}
+		        }
+
+		        stage('PMD'){
+					steps{
+						bat 'mvn pmd:pmd'
+					}
 				}
-			}
+	      	}	
 		}
 		
-		stage('STEP 4 - Load Test'){
+		stage('JavaDoc'){
 			steps{
-				bat 'mvn gatling:test'
+				bat 'mvn site'
 			}
 		}
 		
-		stage('STEP 5 - Nexus Deploy'){
+		stage('Packaging'){
+			steps{
+				bat 'mvn package'
+			}
+		}
+		
+		
+		stage('Archivage Nexus'){
 			steps{
 				nexusPublisher nexusInstanceId: 'localNexus', 
 				nexusRepositoryId: 'releases', 
@@ -48,13 +88,17 @@ pipeline{
 				[
 					[
 						$class: 'MavenPackage', mavenAssetList: 
-						[[classifier: '', extension: '', filePath: 'target/Proth_APP-0.0.1.war']], 
-						mavenCoordinate: [artifactId: 'Proth_APP', groupId: 'com', packaging: 'war', version: '0.0.1']
+						[[classifier: '', extension: '', filePath: 'target/Proth_APP-0.0.1']], 
+						mavenCoordinate: [artifactId: 'Proth_APP-war', groupId: 'com', packaging: 'war', version: '0.0.1']
 					]
 				]
 			}
 		}
-		
-		
+
+		stage('Deploying'){
+			steps{
+			}
+		}
+			
 	}
 }
