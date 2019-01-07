@@ -5,7 +5,7 @@
 
 	<groupId>com</groupId>
 	<artifactId>Proth_APP</artifactId>
-	<version>0.0.2</version>
+	<version>0.0.1</version>
 	<packaging>war</packaging>
 
 	<name>Proth_APP</name>
@@ -91,7 +91,28 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+
+			<!-- CheckStyle Plugin -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+			    <artifactId>maven-checkstyle-plugin</artifactId>
+			    <version>3.0.0</version>
+			</plugin>
+
+			<!-- FindBugs Plugin -->
+			<plugin>
+			    <groupId>org.codehaus.mojo</groupId>
+			    <artifactId>findbugs-maven-plugin</artifactId>
+			    <version>3.0.5</version>
+			</plugin>
 			
+			<!-- PMD Plugin -->
+			<plugin>
+			    <groupId>org.apache.maven.plugins</groupId>
+			    <artifactId>maven-pmd-plugin</artifactId>
+			    <version>3.11.0</version>
+			</plugin>
+
 			<!-- GATLING -->
 			<plugin>
 		        <groupId>io.gatling</groupId>
@@ -112,6 +133,26 @@
 			  <artifactId>cobertura-maven-plugin</artifactId>
 			  <version>2.7</version>
 			</plugin>
+
+			<!-- DOCKER -->
+			<plugin>
+			    <groupId>com.spotify</groupId>
+			    <artifactId>docker-maven-plugin</artifactId>
+			    <version>1.2.0</version>
+			    <configuration>
+			        <imageName>docker-prothapp</imageName>
+			        <baseImage>java</baseImage>
+			 		<entryPoint>["java", "-jar", "/${project.build.finalName}.war"]</entryPoint>
+			        <!-- copy the service's jar file from target into the root directory of the image --> 
+			        <resources>
+			           <resource>
+			             <targetPath>/</targetPath>
+			             <directory>${project.build.directory}</directory>
+			             <include>${project.build.finalName}.war</include>
+			           </resource>
+			        </resources>
+			      </configuration>
+			</plugin>
 		</plugins>
 	</build>
 
@@ -131,11 +172,19 @@
 	      <version>2.7</version>
 	    </plugin>
 	
+		<!-- Cobertura to Maven Site -->
 	    <plugin>
 	      <groupId>org.codehaus.mojo</groupId>
 	      <artifactId>cobertura-maven-plugin</artifactId>
 	      <version>2.7</version>
 	    </plugin>
+
+	    <!-- JavaDoc to Maven Site -->
+	    <plugin>
+	    	<groupId>org.apache.maven.plugins</groupId>
+		    <artifactId>maven-javadoc-plugin</artifactId>
+		    <version>3.0.1</version>
+		</plugin>
 	
 	  </plugins>
 	</reporting>
