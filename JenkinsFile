@@ -69,11 +69,11 @@ pipeline{
 	      	}	
 		}
 		
-		/*stage('JavaDoc'){
+		stage('JavaDoc'){
 			steps{
 				bat 'mvn site'
 			}
-		}*/
+		}
 		
 		stage('Packaging'){
 			steps{
@@ -91,7 +91,7 @@ pipeline{
 					[
 						$class: 'MavenPackage', mavenAssetList: 
 						[[classifier: '', extension: '', filePath: 'target/Proth_APP-0.0.3.war']], 
-						mavenCoordinate: [artifactId: 'Proth_APP-war', groupId: 'com', packaging: 'war', version: '0.0.3']
+						mavenCoordinate: [artifactId: 'Proth_APP', groupId: 'com', packaging: 'war', version: '0.0.3']
 					]
 				]
 			}
