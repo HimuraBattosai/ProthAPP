@@ -192,10 +192,12 @@
 	<!-- NEXUS Repository -->
 	<repositories>
 	   <!-- If you want only to download dependencies from Nexus -->
-	  <repository>
-	    <id>maven-group</id>
-	    <url>http://localhost:8081/nexus/content/groups/group-maven/</url>
-	  </repository>
+	   <!--
+		<repository>
+		  <id>maven-group</id>
+		  <url>http://localhost:8081/nexus/content/groups/group-maven/</url>
+		</repository>
+	  -->
 	</repositories>
 	<distributionManagement>
 	  <!-- If you want to publish to Nexus [SNAPSHOT + RELEASE] -->
