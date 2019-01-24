@@ -1,6 +1,5 @@
 package com.controller;
 
-import java.util.Date;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -14,12 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.entities.MesureMembreSup;
 import com.entities.Patient;
-import com.entities.ProtheseCatalogue;
 import com.entities.RendezVous;
 import com.entities.Therapeute;
-import com.enumeration.TypeProthese;
 import com.repository.PatientRepository;
 import com.repository.RendezVousRepository;
 import com.repository.TherapeuteRepository;

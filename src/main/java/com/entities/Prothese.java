@@ -18,6 +18,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import com.CommonBaseModel;
 import com.enumeration.Expedition;
 
+@SuppressWarnings("serial")
 @Entity
 public class Prothese extends CommonBaseModel
 {

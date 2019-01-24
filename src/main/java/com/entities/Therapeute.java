@@ -8,6 +8,7 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 
+@SuppressWarnings("serial")
 @Entity
 @DiscriminatorValue("UT")
 public class Therapeute extends User

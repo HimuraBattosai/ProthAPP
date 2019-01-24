@@ -1,10 +1,7 @@
 package com.controller;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,15 +11,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.entities.Commande;
-import com.entities.MesureMembreInf;
-import com.entities.MesureMembreSup;
 import com.entities.Mesures;
 import com.entities.Patient;
 import com.entities.Prothese;
 import com.entities.ProtheseCatalogue;
 import com.entities.Therapeute;
 import com.enumeration.Payement;
-import com.enumeration.TypeProthese;
 import com.repository.CommandeRepository;
 import com.repository.MesureMembreInfRepository;
 import com.repository.MesureMembreSupRepository;

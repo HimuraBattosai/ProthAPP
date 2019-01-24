@@ -7,6 +7,7 @@ import javax.persistence.ManyToOne;
 
 import com.CommonBaseModel;
 
+@SuppressWarnings("serial")
 @Entity
 public class ProtheseSuivi extends CommonBaseModel 
 {

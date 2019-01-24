@@ -8,6 +8,7 @@ import javax.persistence.InheritanceType;
 
 import com.CommonBaseModel;
 
+@SuppressWarnings("serial")
 @Entity
 @Inheritance(strategy=InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name="TYPE_USER", discriminatorType=DiscriminatorType.STRING, length=2)

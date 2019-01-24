@@ -13,6 +13,8 @@ import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 // This base Model contains ID, created_at and updated_at
 
+
+@SuppressWarnings("serial")
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
 public class CommonBaseModel implements Serializable

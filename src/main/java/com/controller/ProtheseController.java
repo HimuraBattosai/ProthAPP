@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.entities.Patient;
 import com.entities.Prothese;
 import com.enumeration.Expedition;
-import com.enumeration.Payement;
 import com.repository.PatientRepository;
 import com.repository.ProtheseRepository;
 

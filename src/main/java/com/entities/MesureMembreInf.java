@@ -1,10 +1,6 @@
 package com.entities;
 
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-
-import com.enumeration.TypeProthese;
 
 @Entity
 public class MesureMembreInf extends Mesures

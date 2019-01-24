@@ -3,7 +3,6 @@ package com.entities;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
-import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 import javax.persistence.DiscriminatorValue;
@@ -13,15 +12,13 @@ import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import com.enumeration.GrpSanguin;
 import com.enumeration.Sexe;
 import com.enumeration.TypeProthese;
-import com.repository.MesureMembreInfRepository;
-import com.repository.MesureMembreSupRepository;
 
+@SuppressWarnings("serial")
 @Entity
 @DiscriminatorValue("UP")
 public class Patient extends User

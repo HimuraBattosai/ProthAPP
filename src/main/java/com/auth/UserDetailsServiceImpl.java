@@ -1,4 +1,4 @@
-package com.auth;
+/*package com.auth;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import com.entities.User;
 import com.repository.UserRepository;
 
-/*@Service
+@Service
 public class UserDetailsServiceImpl implements UserDetailsService
 {
     @Autowired

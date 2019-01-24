@@ -3,15 +3,11 @@ package com;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ApplicationContext;
 
 import com.entities.Patient;
-import com.entities.User;
 import com.enumeration.GrpSanguin;
 import com.enumeration.Sexe;
-import com.repository.PatientRepository;
 import com.repository.UserRepository;
 
 @SpringBootApplication
@@ -21,8 +17,6 @@ public class ProthAppApplication {
 	UserRepository userRepository;
 	
 	public static void main(String[] args) {
-	ApplicationContext context=	SpringApplication.run(ProthAppApplication.class, args);
-	PatientRepository pu =context.getBean(PatientRepository.class);
 	Patient p = new Patient();
 	p.setUsername("elouali");
 	p.setPassword("456");

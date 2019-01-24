@@ -4,17 +4,14 @@ import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import com.CommonBaseModel;
 
+@SuppressWarnings("serial")
 @Entity
 public class ExerciceProg extends CommonBaseModel
 {
@@ -35,18 +32,6 @@ public class ExerciceProg extends CommonBaseModel
 	@JoinColumn(name="exercice_id")
 	private Exercice exercice;
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	public ExerciceProg() {
@@ -107,8 +92,7 @@ public class ExerciceProg extends CommonBaseModel
 
 	public void setExercice(Exercice exercice) {
 		this.exercice = exercice;
-	}
-	
+	}	
 	
 	
 
